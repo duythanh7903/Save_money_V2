@@ -1,0 +1,311 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FAFAFA">
+
+        <ImageView
+            android:id="@+id/iconNoti"
+            android:layout_width="@dimen/_32sdp"
+            android:layout_height="@dimen/_32sdp"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_noti"
+            app:layout_constraintBottom_toBottomOf="@id/avatar"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avatar" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/avatar"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
+            android:layout_margin="@dimen/_12sdp"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/ic_launcher"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/font_semi_bold"
+            android:text="@string/home"
+            android:textColor="@color/text_dark_blue"
+            android:textSize="@dimen/_20ssp"
+            app:layout_constraintBottom_toBottomOf="@id/avatar"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/avatar" />
+
+        <TextView
+            android:id="@+id/textLet"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_20sdp"
+            android:fontFamily="@font/font_medium"
+            android:text="@string/let_s_manage_your_account"
+            android:textColor="@color/text_dark"
+            android:textSize="@dimen/_18ssp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/iconNoti" />
+
+        <TextView
+            android:id="@+id/textHello"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_4sdp"
+            android:fontFamily="@font/font_regular"
+            android:text="@string/hello"
+            android:textColor="@color/un_active"
+            android:textSize="@dimen/_14ssp"
+            app:layout_constraintStart_toStartOf="@id/textLet"
+            app:layout_constraintTop_toBottomOf="@id/textLet" />
+
+        <LinearLayout
+            android:id="@+id/layoutBalance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:background="@drawable/bg_btn_login"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:padding="@dimen/_12sdp"
+            app:layout_constraintTop_toBottomOf="@id/textHello">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/_4sdp"
+                android:fontFamily="@font/font_regular"
+                android:text="@string/total_balance"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_14ssp" />
+
+            <TextView
+                android:id="@+id/textAccountBalance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/font_semi_bold"
+                android:text="$ 23423.23423"
+                android:textColor="@color/white"
+                android:textSize="@dimen/_18ssp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layoutManage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/_12sdp"
+            android:layout_marginTop="@dimen/_16sdp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            app:layout_constraintTop_toBottomOf="@id/layoutBalance">
+
+            <LinearLayout
+                android:id="@+id/btnRealIncome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_manage_home"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/icon_income"
+                    app:tint="@color/text_dark_blue" />
+
+                <TextView
+                    android:id="@+id/text1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/real_income"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/btnActualCost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_manage_home"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/icon_epensive"
+                    app:tint="@color/text_dark_blue" />
+
+                <TextView
+                    android:id="@+id/text2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/actual_cost"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/btnExpectedIncome"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_manage_home"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/icon_income"
+                    app:tint="@color/un_active" />
+
+                <TextView
+                    android:id="@+id/text3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/expected_income"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/_12ssp" />
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="@dimen/_10sdp"
+                android:layout_height="1dp" />
+
+            <LinearLayout
+                android:id="@+id/btnEstCost"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:background="@drawable/bg_btn_manage_home"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:padding="@dimen/_8sdp">
+
+                <ImageView
+                    android:layout_width="@dimen/_24sdp"
+                    android:layout_height="@dimen/_24sdp"
+                    android:layout_marginBottom="@dimen/_4sdp"
+                    android:padding="@dimen/_2sdp"
+                    android:src="@drawable/icon_epensive"
+                    app:tint="@color/un_active" />
+
+                <TextView
+                    android:id="@+id/text4"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:ellipsize="marquee"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:fontFamily="@font/font_regular"
+                    android:gravity="center"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:singleLine="true"
+                    android:text="@string/estimated_cost"
+                    android:textAlignment="center"
+                    android:textColor="@color/text_dark"
+                    android:textSize="@dimen/_12ssp" />
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="@dimen/_12sdp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            android:background="@drawable/bg_alpha_orange_border_12"
+            app:layout_constraintTop_toBottomOf="@id/layoutManage">
+
+            <TextView
+                android:id="@+id/textTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_12sdp"
+                android:fontFamily="@font/font_medium"
+                android:text="@string/activities"
+                android:textColor="@color/text_dark_blue"
+                android:textSize="@dimen/_14ssp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rcvActivities"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="@dimen/_12sdp"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
